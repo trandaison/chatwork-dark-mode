@@ -1,8 +1,1 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-
-
-ReactDOM.render(
-  <div>Hello, Extension!</div>,
-  document.getElementById('app'),
-)
+console.log('Hello! CW DarkMode is running...'); // eslint-disable-line

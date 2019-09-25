@@ -1,14 +1,16 @@
 {
-  "name": "Chrome Extension Starter Kit",
-  "description": "",
+  "name": "Chatwork Dark Mode",
+  "description": "A dark mode UI for Chatwork",
   "version": "1.0.0",
   "browser_action": {
-    "default_popup": "dist/popup.html"
+    "default_popup": "dist/popup.html",
+    "default_icon": "dist/img/icon48.png"
   },
   "permissions": [
     "bookmarks",
     "tabs",
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
   "manifest_version": 2,
   "commands": {
@@ -19,5 +21,18 @@
       },
       "description": ""
     }
+  },
+  "content_scripts": [{
+    "matches": [
+      "https://www.chatwork.com/*",
+      "https://kcw.kddi.ne.jp/*"
+    ],
+    "js": ["dist/js/main.js"],
+    "css": ["dist/css/main.css"]
+  }],
+  "icons": {
+    "16": "dist/img/icon16.png",
+    "48": "dist/img/icon48.png",
+    "128": "dist/img/icon128.png"
   }
 }

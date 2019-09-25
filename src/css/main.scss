@@ -1,0 +1,348 @@
+$black: #000;
+$white: #fff;
+$text-color: #7a8994;
+$grey: #ccc;
+$bg-darken: #2a2c35;
+$base-black: #121517;
+$box-border-color: #4e4e4e;
+
+#_subRoomDescriptionWrapper {
+  height: calc(100vh - 165px) !important;
+}
+
+.roomContent {
+  right: 300px !important;
+}
+
+.toggle-dark-theme {
+  color: $grey;
+  display: inline-flex;
+  align-items: center;
+
+  .switch {
+    margin: auto 10px;
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 22px;
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    input:checked+.slider {
+      background-color: $black;
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(14px);
+      background: $white;
+    }
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #484848;
+    transition: .3s ease;
+    border: 2px solid $grey;
+    border-radius: 9999px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 2px;
+      bottom: 2px;
+      background-color: #848484;
+      border-radius: 50%;
+      transition: .3s ease;
+    }
+  }
+}
+
+body:not(.default-theme) {
+  .loading {
+    background-color: $bg-darken !important;
+  }
+
+  .actionNav {
+    filter: invert(90%);
+  }
+
+  .chatInfo {
+    background: transparent;
+    border-color: $box-border-color;
+
+    .title {
+      background: rgba(242, 242, 242, 0.10);
+      border-color: $box-border-color;
+      color: #adadad;
+    }
+  }
+
+  .chatInput {
+    border: 1px solid #425075;
+
+    &__settingEnterAction {
+      white-space: nowrap;
+    }
+
+    &__textarea {
+      &--existExternalUser {
+        background: #20272b;
+      }
+    }
+
+    &__textarea {
+      &::placeholder {
+        color: rgba(122, 137, 148, .5);
+      }
+    }
+
+    &__textareaContainer {
+      background: #20272b;
+    }
+
+    &__tools {
+      border-bottom: 1px solid #e6d8ad;
+      filter: invert(90%);
+    }
+  }
+
+  .chatRoomHeader {
+    background-color: $black;
+    border-bottom: 1px solid #424242;
+    border-left: 1px solid #424242;
+
+    &__roomTitle {
+      color: $grey;
+    }
+  }
+
+  .chatSendArea {
+    background: #3e4448;
+
+    &__areaScaleButtonLeft {
+      &:hover {
+        background: #4d555d;
+      }
+    }
+  }
+
+  .timelineMessage {
+    border-top: 1px solid #525252;
+
+    &.chatTimeLineMessageHover {
+      background-color: #1a1d21;
+      border-bottom: 1px solid #525252;
+    }
+  }
+
+  .messageBadge {
+    .chatTimeLineReply,
+    .chatTimeLineTo,
+    &__toAllBadge {
+      background-color: #006528;
+    }
+  }
+
+  .quoteText {
+    border-left: 2px dashed #475d84;
+    color: rgba(122, 137, 148, .5);
+    padding: 5px 0 5px 10px;
+  }
+
+  .reactionButton {
+    background-color: $black;
+  }
+
+  .roomContent {
+    background: $base-black;
+    border-left: none;
+    border-right: none;
+  }
+
+  .roomDescription {
+    &__description {
+      &--overflow {
+        &:hover {
+          background: #20272b;
+        }
+      }
+    }
+  }
+
+  .roomDescription__header,
+  .roomTask__header,
+  .sc-jrIrqw {
+    background-color: rgba(230, 230, 230, .1);
+  }
+
+  .roomInformationContentContainer {
+    background: #20272b;
+  }
+
+  .roomListHeader {
+    filter: invert(100%);
+    z-index: 3;
+    position: relative;
+  }
+
+  .sc-cJSrbW {
+    background: #131621;
+
+    p {
+      color: $text-color;
+
+      &.iaaGZM {
+        color: #465169;
+      }
+    }
+
+    &.gjGWIu {
+      background: $black;
+    }
+  }
+
+  .sc-gGBfsJ {
+    &.cfFvEk {
+      background: #81a781;
+      color: #05460d;
+    }
+  }
+
+  .sc-jrIrqw {
+    border: none;
+  }
+
+  .sc-feJyhm {
+    &.hjDIYs {
+      background: #323233;
+    }
+
+    div[role="button"] {
+      filter: invert(85%);
+    }
+  }
+
+  .timeLine {
+    &:focus {
+      border: none;
+    }
+
+    &__dateHead {
+      border-top: 2px solid $black;
+    }
+
+    &__dateHeadBody {
+      background: $black;
+    }
+
+    &__dateHeadText {
+      color: $white;
+    }
+  }
+
+  .timelineMessage {
+    &--border {
+      border-top: 1px solid #525252;
+    }
+
+    &--editing {
+      background-color: #002c42;
+      border-color: black;
+    }
+
+    &--mention {
+      background-color: #002c42 !important;
+      border-color: black !important;
+
+      +.timelineMessage--border {
+        border-top: 1px solid black;
+      }
+
+      pre {
+        color: #839c8c;
+      }
+
+      &::before {
+        content: '';
+        width: 10px;
+        height: 100%;
+        background-color: #224156;
+        background-image: url(http://www.transparenttextures.com/patterns/cream-pixels.png);
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        opacity: 0.8;
+      }
+    }
+
+    &--jumpMessage {
+      border-bottom: 1px solid #054958 !important;
+      border-top: 1px solid #077d98 !important;
+      background: #162831 !important;
+      color: #b1b2b3 !important;
+    }
+
+    &__reactionUserListContainer {
+      filter: invert(100%);
+    }
+
+    &__avatar {
+      .avatarMedium {
+        background-color: #077d98;
+      }
+    }
+  }
+
+  .chatCode {
+    filter: invert(85%);
+  }
+
+  .taskMine,
+  .taskComplete {
+    background-color: transparent;
+  }
+
+  .taskComplete {
+    .chatInfoTaskMetaArea {
+      border-top: 1px solid $box-border-color;
+    }
+  }
+
+
+  ::-webkit-scrollbar {
+    background: #141621;
+    overflow: visible;
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 99999px;
+  }
+
+  ::selection {
+    background: rgba(162, 199, 230, 0.25);
+    color: #b5b7b9;
+  }
+
+  body,
+  pre,
+  input,
+  select,
+  textarea,
+  button {
+    color: $text-color;
+  }
+}
